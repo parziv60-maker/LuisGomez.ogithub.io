@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitácora ITI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2> Registro de Mantenimiento</h2>
+        <form id="bitacoraForm">
+            <label>ID Equipo:</label>
+            <input type="text" id="id_equipo" required>
+            <label>Técnico:</label>
+            <input type="text" id="tecnico" required>
+            <label>Tipo:</label>
+            <select id="tipo">
+                <option value="preventivo">Preventivo</option>
+                <option value="correctivo">Correctivo</option>
+            </select>
+            <label>Descripción:</label>
+            <textarea id="descripcion" required></textarea>
+            <button type="submit" id="btnEnviar">Guardar en Bitácora</button>
+        </form>
+        <div id="mensaje" style="display:none; color:green; text-align:center; margin-top:10px;">✅ ¡Enviado!</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
