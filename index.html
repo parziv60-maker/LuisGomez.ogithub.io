@@ -3,28 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitácora ITI</title>
+    <title>Bitácora ITI - Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <h2> Registro de Mantenimiento</h2>
-        <form id="bitacoraForm">
-            <label>ID Equipo:</label>
-            <input type="text" id="id_equipo" required>
-            <label>Técnico:</label>
-            <input type="text" id="tecnico" required>
-            <label>Tipo:</label>
-            <select id="tipo">
-                <option value="preventivo">Preventivo</option>
-                <option value="correctivo">Correctivo</option>
-            </select>
-            <label>Descripción:</label>
-            <textarea id="descripcion" required></textarea>
-            <button type="submit" id="btnEnviar">Guardar en Bitácora</button>
-        </form>
-        <div id="mensaje" style="display:none; color:green; text-align:center; margin-top:10px;">✅ ¡Enviado!</div>
-    </div>
-    <script src="script.js"></script>
+    <header>
+        <h1><i class="fas fa-microchip"></i> Instituto Tecnológico del Istmo</h1>
+        <p>Centro de Cómputo | Sistema de Bitácora Digital</p>
+    </header>
+
+    <main class="container">
+        <section class="stats-grid">
+            <div class="card stat">
+                <i class="fas fa-tools"></i>
+                <h3>Mantenimientos</h3>
+                <p id="count-mtto">En tiempo real</p>
+            </div>
+            <div class="card stat">
+                <i class="fas fa-check-circle"></i>
+                <h3>Estado</h3>
+                <p>Sistema Activo</p>
+            </div>
+        </section>
+
+        <section class="card form-section">
+            <h2><i class="fas fa-edit"></i> Registrar Nuevo Servicio</h2>
+            <form id="bitacoraForm">
+                <div class="input-group">
+                    <label><i class="fas fa-tag"></i> ID del Equipo</label>
+                    <input type="text" id="id_equipo" placeholder="Ej: ITI-CC-01" required>
+                </div>
+                
+                <div class="input-group">
+                    <label><i class="fas fa-user-technician"></i> Técnico Responsable</label>
+                    <input type="text" id="tecnico" placeholder="Nombre del compañero" required>
+                </div>
+
+                <div class="input-group">
+                    <label><i class="fas fa-cog"></i> Tipo de Mantenimiento</label>
+                    <select id="tipo">
+                        <option value="Preventivo">Preventivo (Limpieza/Soft)</option>
+                        <option value="Correctivo">Correctivo (Reparación)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label><i class="fas fa-comment-alt"></i> Descripción del Trabajo</label>
+                    <textarea id="descripcion" rows="3" placeholder="Detalle de la actividad..." required></textarea>
+                </div>
+
+                <button type="submit" id="btnEnviar">
+                    <i class="fas fa-save"></i> Guardar Registro
+                </button>
+            </form>
+            <div id="mensaje" class="hidden">✅ Registro enviado correctamente a Google Sheets</div>
+        </section>
+    </main>
 </body>
 </html>
