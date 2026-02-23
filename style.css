@@ -1,5 +1,82 @@
-body { font-family: sans-serif; background-color: #f0f2f5; padding: 20px; }
-.container { max-width: 400px; background: white; padding: 20px; border-radius: 8px; margin: auto; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-label { display: block; margin-top: 10px; font-weight: bold; }
-input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-button { width: 100%; background: #003366; color: white; border: none; padding: 10px; margin-top: 20px; border-radius: 4px; cursor: pointer; }
+:root {
+    --primary: #003366; /* Azul Tecnológico */
+    --accent: #ffcc00;  /* Oro/Amarillo */
+    --bg: #f4f7f6;
+    --dark: #2c3e50;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    margin: 0;
+    color: var(--dark);
+}
+
+header {
+    background: var(--primary);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+    border-top: 5px solid var(--primary);
+}
+
+.card.stat {
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card.stat:hover { transform: translateY(-5px); }
+
+.card.stat i { font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem; }
+
+h2 { border-bottom: 2px solid var(--bg); padding-bottom: 10px; margin-bottom: 20px; }
+
+.input-group { margin-bottom: 1.2rem; }
+
+label { display: block; margin-bottom: 5px; font-weight: 600; }
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+button {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover { background: #002244; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+.hidden { display: none; background: #d4edda; color: #155724; padding: 15px; border-radius: 8px; margin-top: 15px; text-align: center; }
